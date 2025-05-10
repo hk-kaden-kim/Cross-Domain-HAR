@@ -5,7 +5,7 @@ This project addresses the challenge of generalizing Human Activity Recognition 
 
 ### Citation
 ```
-@masterproject{kim2024opensetovr,
+@masterproject{kimoiko2024crossdomainhar,
   title={Cross-Domain HAR: Self-supervised Learning and Enhanced Finetuning Approaches.},
   author={Hyeongkyun Kim and Orestis Oikonomou},
   school={SIPLab, ETH Zürich, and AIML Group, University of Zurich.},
