@@ -2,6 +2,14 @@
 
 ## Overview
 This project addresses the challenge of generalizing Human Activity Recognition (HAR) models across varied datasets from wrist-worn accelerometers. We explore Multi-Task Self-Supervised Learning (MTSSL) and advanced fine-tuning techniques, including classic feature extraction, unknown sample integration, specialized loss functions, and diverse data augmentation strategies. Our approach markedly improves the cross-domain generalization and adaptability of HAR models, demonstrated through significant accuracy and performance enhancements in classification tasks. 
+
+### Citation
+```
+Kim, H., Oikonomou, O. (2024). Cross-Domain HAR: Self-supervised Learning and Enhanced Finetuning Approaches. Master's Project, University of Zürich AIML Group, and ETH Zürich Sensing, Interaction & Perception Group.
+https://seafile.ifi.uzh.ch/f/5c79a0dfef5d4293a5c7/
+```
+
+
 ## Project Structure
 This repository is organized into four main folders, each dedicated to a specific aspect of the project's development and execution. Below is an outline of each folder and its contents:
 
