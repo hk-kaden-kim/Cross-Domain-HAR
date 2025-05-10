@@ -1,0 +1,64 @@
+#!/bin/bash
+
+export PATH2SOURCEROOT="$HOME/mp_project/t-st-2023-OneShot-HAR-Hyeongkyun-Orestis/3-Model/_inference"
+
+# =============================================
+# EVALUATION DATASET
+export INF_DATA="cap24_W18"
+export PATH2INF_DATA="$SCRATCH"/mp-dataset/finetune_capture24_30hz_w10/Willetts2018/ 
+
+# =============================================
+# SETTING 1
+# Choose finetuned model's weight used for inference.
+export FTMODEL="2_329e-2_kn_unkn"
+export PATH2FT_WEIGHT="$HOME/mp_project/t-st-2023-OneShot-HAR-Hyeongkyun-Orestis/3-Model/_finetuning/_2-addunknown/_model/$FTMODEL"
+# =============================================
+
+# =============================================
+# SETTING 2
+export OUTPUTPREFIX="_base"
+export SAVE_LOGITS="True"
+export SAVE_FINAL_FEATS="True"
+# =============================================
+
+# =============================================
+# SETTING 3 - For Method1
+# Choosing Variants
+export ADD_CLASSICAL_FEATS="False"
+# =============================================
+
+job_name="I-$OUTPUTPREFIX"
+
+sbatch  <<EOT
+#!/bin/bash
+###############################
+# Define sbatch configuration #
+###############################
+
+#SBATCH -A es_chatzi
+#SBATCH -n 8
+#SBATCH --time=5:00:00
+#SBATCH --mem-per-cpu=5G
+#SBATCH --job-name=$job_name
+#SBATCH --gpus=1
+#SBATCH --gres=gpumem:10G
+
+echo "###############################################################"
+echo ""
+echo "Slurm JOB Logs"
+echo "..."
+echo ""
+echo ""
+echo "###############################################################"
+
+python "${PATH2SOURCEROOT}/_inference.py" \
+        model_root="$PATH2FT_WEIGHT" \
+        output_prefix="$OUTPUTPREFIX" \
+        gpu=1 \
+        data=$INF_DATA \
+        save_logits=$SAVE_LOGITS \
+        save_final_feats=$SAVE_FINAL_FEATS \
+        add_classical_feats=$ADD_CLASSICAL_FEATS\
+        data.data_root="$PATH2INF_DATA" \
+
+EOT

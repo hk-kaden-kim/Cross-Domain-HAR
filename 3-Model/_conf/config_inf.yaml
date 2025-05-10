@@ -1,0 +1,20 @@
+defaults:
+  - _self_
+  - data: cap24_W18
+  - evaluation: all
+  - model: resnet
+  - dataloader: ten_sec
+
+gpu: 2
+gpu_ids: [0, 1, 2]  # gpus to use if multi_gpu==true
+multi_gpu: false
+
+model_root: ".../_finetuning/_model/tmp"
+model_path: [".../_finetuning/_model/tmp/fold0/tmp.pt"]
+result_path: [".../_inference/_result/tmp/fold0/pred_Y.npy"]
+save_logits: False
+save_final_feats: False
+is_verbose: True
+
+output_prefix: "cap24_W18"
+add_classical_feats: False

@@ -1,0 +1,31 @@
+data_root: .../mp-dataset/finetune_capture24_30hz_w10/Willetts2018/
+X_path: "${data.data_root}/X.npy"
+Y_path:  "${data.data_root}/Y.npy"
+PID_path:  "${data.data_root}/pid.npy"
+
+sample_rate: 30
+windows_sec: 10
+actual_using_ratio: 1
+
+pid_filter: ['P023', 'P094', 'P106', 'P112', 'P136', 'P020', 'P088', 'P123', 'P129', 'P139', 'P002', 'P003', 'P059', 'P147', 'P149', 'P021', 'P036', 'P041', 'P082', 'P135', 'P018', 'P052', 'P095', 'P118', 'P121', 'P045', 'P055', 'P102', 'P108', 'P144', 'P009', 'P081', 'P117', 'P122', 'P140', 'P039', 'P069', 'P076', 'P119', 'P142']
+
+# to confirm
+inf_use_unknown: False
+output_size: 6
+cap24_labels: ['bicycling', 'mixed', 'sit-stand', 'sleep', 'vehicle', 'walking']
+batch_size: 1000
+held_one_subject_out: false
+dataset_name: 'capture24'
+subject_count: -1
+ratio2keep: 1
+augmentation: 12
+add_unknown: False
+known_unknown_path: .../mp-dataset/__Important__/finetune_known_unknown_30hz_w10/relabel/Willetts2018/
+known_unknown_X_path: "${data.known_unknown_path}/X.npy"
+known_unknown_Y_path:  "${data.known_unknown_path}/Y.npy"
+known_unknown_PID_path:  "${data.known_unknown_path}/pid.npy"
+exclude: '...'
+unknown_unknown_path: .../mp-dataset/__Important__/eval_unknown_unknown_30hz_w10/relabel/Willetts2018/
+unknown_unknown_X_path: "${data.unknown_unknown_path}/X.npy"
+unknown_unknown_Y_path:  "${data.unknown_unknown_path}/Y.npy"
+unknown_unknown_PID_path:  "${data.unknown_unknown_path}/pid.npy"

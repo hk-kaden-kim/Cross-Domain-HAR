@@ -1,0 +1,22 @@
+data_root: .../mp-dataset/__Important__/eval_..._30hz_w10/relabel/Willetts2018/ 
+X_path: "${data.data_root}/X.npy"
+Y_path:  "${data.data_root}/Y.npy"
+PID_path:  "${data.data_root}/pid.npy"
+
+sample_rate: 30
+windows_sec: 10
+actual_using_ratio: 1
+
+pid_filter: 
+
+# to confirm
+inf_use_unknown: False
+output_size: 6
+cap24_labels: ['bicycling', 'mixed', 'sit-stand', 'sleep', 'vehicle', 'walking']
+batch_size: 1000
+held_one_subject_out: false
+dataset_name: '...'
+subject_count: -1
+ratio2keep: 1
+augmentation: 12
+add_unknown: False
