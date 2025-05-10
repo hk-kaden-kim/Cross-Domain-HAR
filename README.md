@@ -5,7 +5,10 @@ This project addresses the challenge of generalizing Human Activity Recognition 
 
 ### Citation
 ```
-Kim, H., Oikonomou, O. (2024). Cross-Domain HAR: Self-supervised Learning and Enhanced Finetuning Approaches. Master's Project, University of Zürich AIML Group, and ETH Zürich Sensing, Interaction & Perception Group.
+Kim, H., Oikonomou, O. (2024).
+Cross-Domain HAR: Self-supervised Learning and Enhanced Finetuning Approaches.
+Master's Project, University of Zürich AIML Group,
+and ETH Zürich Sensing, Interaction & Perception Group.
 https://seafile.ifi.uzh.ch/f/5c79a0dfef5d4293a5c7/
 ```
 
